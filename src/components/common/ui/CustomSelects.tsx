@@ -7,7 +7,7 @@ interface Option {
 }
 
 interface CustomSelectProps {
-  value: string;
+  value?: string;
   onChange: (event: { target: { value: string } }) => void;
   options: Option[];
   placeholder: string;

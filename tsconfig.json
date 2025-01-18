@@ -28,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/common/ui/CustomSelects.tsx"
-  ],
+, "src/components/common/courses/CourseDetailsModal.tsx"  ],
   "exclude": ["node_modules"]
 }

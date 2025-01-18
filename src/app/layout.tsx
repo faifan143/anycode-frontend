@@ -14,6 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar">
+      <head>
+        <link rel="icon" href="/logo_2.png" type="image/png" sizes="32x32" />
+      </head>
       <body>
         <LayoutProviders>{children}</LayoutProviders>
       </body>
