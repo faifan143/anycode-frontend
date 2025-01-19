@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // components/common/courses/CourseFilters.tsx
 import { FC } from "react";
 import { Search } from "lucide-react";

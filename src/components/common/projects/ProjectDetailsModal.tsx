@@ -59,14 +59,14 @@ export const ProjectDetailsModal: FC<ProjectDetailsModalProps> = ({
     <AnimatePresence>
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          className="fixed -inset-8 z-50 flex items-center justify-center p-4"
           dir="rtl"
         >
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="absolute -inset-8 bg-black/50 backdrop-blur-sm"
             onClick={onClose}
           />
 
@@ -74,7 +74,7 @@ export const ProjectDetailsModal: FC<ProjectDetailsModalProps> = ({
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
-            className="relative bg-gray-900/90 w-full max-w-5xl rounded-xl border border-gray-800 shadow-xl overflow-hidden max-h-[90vh] overflow-y-auto"
+            className="relative bg-gray-900/90 w-full max-w-5xl rounded-xl border border-gray-800 shadow-xl overflow-hidden max-h-[90vh] overflow-y-auto no-scrollbar"
           >
             {/* Header */}
             <div className="p-4 border-b border-gray-800 flex justify-between items-center sticky top-0 bg-gray-900/90 backdrop-blur-sm">

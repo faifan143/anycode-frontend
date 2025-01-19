@@ -31,19 +31,6 @@ export const ProjectCard: FC<ProjectCardProps> = ({
     }
   };
 
-  const getPriorityColor = (priority: string) => {
-    switch (priority) {
-      case "urgent":
-        return "text-red-500";
-      case "high":
-        return "text-orange-500";
-      case "medium":
-        return "text-yellow-500";
-      default:
-        return "text-blue-500";
-    }
-  };
-
   const getStatusText = (status: string) => {
     switch (status) {
       case "in_progress":
@@ -73,7 +60,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
             </p>
           </div>
           <span
-            className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(
+            className={`px-4 py-1 rounded-full text-xs font-medium ${getStatusColor(
               project.status
             )}`}
           >

@@ -64,17 +64,6 @@ export const FYPDetailsModal: FC<FYPDetailsModalProps> = ({
     }
   };
 
-  const getPaymentStatusText = (status: string) => {
-    switch (status) {
-      case "paid":
-        return "مدفوع";
-      case "partial":
-        return "مدفوع جزئياً";
-      default:
-        return "غير مدفوع";
-    }
-  };
-
   return (
     <AnimatePresence>
       {isOpen && (
