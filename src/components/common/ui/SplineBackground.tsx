@@ -39,36 +39,41 @@ const ParticleEffect = () => {
     </div>
   );
 };
+const shapes: {
+  كورسات: string[];
+  تخرج: string[];
+  نظامي: string[];
+  عقود: string[];
+} = {
+  كورسات: [
+    "M0 0L30 0L15 30Z", // Triangle
+    "M0 0H30V30H0Z", // Square
+    "M15 0L30 30H0Z", // Inverted Triangle
+  ],
+  تخرج: [
+    "M0 15C0 6.716 6.716 0 15 0C23.284 0 30 6.716 30 15C30 23.284 23.284 30 15 30C6.716 30 0 23.284 0 15Z", // Circle
+    "M0 0L30 0L15 30Z", // Triangle
+    "M0 0H30V30H0Z", // Square
+  ],
+  نظامي: [
+    "M15 0L30 30H0Z", // Inverted Triangle
+    "M0 15C0 6.716 6.716 0 15 0C23.284 0 30 6.716 30 15C30 23.284 23.284 30 15 30C6.716 30 0 23.284 0 15Z", // Circle
+    "M0 0L30 0L15 30Z", // Triangle
+  ],
+  عقود: [
+    "M0 0L30 0L15 30Z", // Triangle
+    "M0 0H30V30H0Z", // Square
+    "M15 0L30 30H0Z", // Inverted Triangle
+  ],
+};
+
 const FloatingShapes = ({
   type,
 }: {
-  type: "كورسات" | "تخرح" | "نظامي" | "عقود";
+  type: "كورسات" | "تخرج" | "نظامي" | "عقود";
 }) => {
-  const shapes = {
-    كورسات: [
-      "M0 0L30 0L15 30Z", // Triangle
-      "M0 0H30V30H0Z", // Square
-      "M15 0L30 30H0Z", // Inverted Triangle
-    ],
-    تخرج: [
-      "M0 15C0 6.716 6.716 0 15 0C23.284 0 30 6.716 30 15C30 23.284 23.284 30 15 30C6.716 30 0 23.284 0 15Z", // Circle
-      "M0 0L30 0L15 30Z", // Triangle
-      "M0 0H30V30H0Z", // Square
-    ],
-    نظامي: [
-      "M15 0L30 30H0Z", // Inverted Triangle
-      "M0 15C0 6.716 6.716 0 15 0C23.284 0 30 6.716 30 15C30 23.284 23.284 30 15 30C6.716 30 0 23.284 0 15Z", // Circle
-      "M0 0L30 0L15 30Z", // Triangle
-    ],
-    عقود: [
-      "M0 0L30 0L15 30Z", // Triangle
-      "M0 0H30V30H0Z", // Square
-      "M15 0L30 30H0Z", // Inverted Triangle
-    ],
-  };
-
   return (
-    <div className="absolute -inset-8 overflow-hidden">
+    <div className="absolute inset-0 overflow-hidden">
       {shapes[type]?.map((path, i) => (
         <motion.svg
           key={i}
@@ -148,7 +153,9 @@ const SplineBackground = ({
           transition={{ duration: 0.5 }}
         >
           <ParticleEffect />
-          <FloatingShapes type={activeTab} />
+          <FloatingShapes
+            type={activeTab as "كورسات" | "تخرج" | "نظامي" | "عقود"}
+          />
         </motion.div>
       </AnimatePresence>
 
